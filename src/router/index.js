@@ -1,5 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import Users from '../views/User.vue';
+import NotFound from '../views/NotFound.vue';
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,7 +20,16 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/users/:username/:id',
+      name: 'users',
+      component: Users,
+    },
+    { 
+      path: '/:pathMatch(.*)*', 
+      name: 'NotFound',
+      component: NotFound },
   ],
 })
 
-export default router
+export default router;
