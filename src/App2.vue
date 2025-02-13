@@ -1,5 +1,14 @@
 <script setup>
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+
+const navigateToUserProfile = () => {
+    router.push({name: "Profil", params: {id: 100}});
+}
+const navigateToContact = () => {
+    router.push({name: "contact", params: {id: 200}});
+}
 </script>
 
 <template>
@@ -14,6 +23,11 @@
     <router-link to="/users2/12/Contact">/users/12/posts</router-link>
   </p>
   <router-view></router-view>
+  <div>
+    <h1>Programatic Navigation</h1>
+    <button @click="navigateToContact">Go to Contact</button>
+    <button @click="navigateToUserProfile">Go to User Profile</button>
+  </div>
 </template>
 
 <style scoped>
