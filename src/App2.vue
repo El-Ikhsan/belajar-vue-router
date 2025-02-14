@@ -28,11 +28,24 @@ const navigateToContact = () => {
     <button @click="navigateToContact">Go to Contact</button>
     <button @click="navigateToUserProfile">Go to User Profile</button>
   </div>
+  <div>
+  <router-link :to="{name: 'Page1'}">Page1</router-link>
+  <router-link :to="{name: 'Page2'}">Page2</router-link>
+  <br/>
+  <router-view name="a"></router-view>
+  <br/>
+  <router-view name="b"></router-view>
+  </div>
 </template>
 
 <style scoped>
+
 * {
     background-color: rgb(23, 75, 66);
-    color: rgb(253, 253, 253)969;
+    color: rgb(253, 253, 253);
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }
 </style>
