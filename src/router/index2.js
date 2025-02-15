@@ -10,20 +10,22 @@ const routes = [
     {
         path: "/users2/:id",
         component: Parent,
+        props: true,
         name: "homeUsers",
         children: [
             { path: "", component: Home },
-            { path: "Profil", name: "Profil", component: Profil },
+            { path: "Profil", name: "Profil", props: true, component: Profil },
             { path: "Contact", name: "contact", component: Contact },
         ]
     },
     {
-        path: "/page1",
+        path: "/page1/:id",
         name: "Page1",
         components: {
             a: First,
             b: Two
-        }
+        },
+        props: {a: true, b:false},
     },
     {
         path: "/page2",

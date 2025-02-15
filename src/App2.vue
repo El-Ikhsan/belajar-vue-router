@@ -29,7 +29,7 @@ const navigateToContact = () => {
     <button @click="navigateToUserProfile">Go to User Profile</button>
   </div>
   <div>
-  <router-link :to="{name: 'Page1'}">Page1</router-link>
+  <router-link :to="{name: 'Page1', params: { id: 20}}">Page1</router-link>
   <router-link :to="{name: 'Page2'}">Page2</router-link>
   <br/>
   <router-view name="a"></router-view>
