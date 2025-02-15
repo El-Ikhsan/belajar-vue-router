@@ -24,6 +24,16 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
+
+.active {
+  font-weight: bold;
+  color: rgb(0, 68, 255);
+}
+.exact-active {
+  font-weight: bold;
+  color: rgb(255, 8, 0);
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
