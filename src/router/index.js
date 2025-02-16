@@ -28,6 +28,9 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
+      meta: {
+        requiresAuth: false,
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -55,8 +58,15 @@ router.beforeEach((to, form, next) => {
   } else next(false);
 })
 
-router.beforeResolve(async (to,form) => {
+router.beforeResolve((to,form, next) => {
   console.log(`Validai apakah auth berhasil = ${auth}`);
+  if (to.meta.requiresAuth && (to.path == "/about")) {
+    next();
+  } else if (to.path == "/about"){
+    next('/home');
+  } else {
+    next();
+  }
 })
 
 router.afterEach(async (to, form) => {
