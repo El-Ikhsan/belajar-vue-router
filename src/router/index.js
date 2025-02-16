@@ -43,6 +43,25 @@ const router = createRouter({
       name: 'NotFound',
       component: NotFound },
   ],
+});
+
+let auth = false;
+
+router.beforeEach((to, form, next) => {
+  if (to) {
+    console.log(to.path, " ",form.path);
+    auth = true;
+    next();
+  } else next(false);
+})
+
+router.beforeResolve(async (to,form) => {
+  console.log(`Validai apakah auth berhasil = ${auth}`);
+})
+
+router.afterEach(async (to, form) => {
+  auth = false;
+  console.log(`Reset Validai auth = ${auth}`);
 })
 
 export default router;
