@@ -1,6 +1,7 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from 'vue-router';
+import HelloWorld from './components/HelloWorld.vue';
+
 </script>
 
 <template>
@@ -13,8 +14,8 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink :to="{ name: 'users12', params: {  id: 900}}">jono</RouterLink>
-        <RouterLink :to="{ name: 'users12', params: { username: 'Agus', id: 900}}">agus</RouterLink>
+        <RouterLink :to="{ name: 'users12', params: { username: 'Jono', id: 1}}">jono</RouterLink>
+        <RouterLink :to="{ name: 'users12', params: { username: 'Agus', id: 2}}">agus</RouterLink>
         <RouterLink to="/userd">Not Found</RouterLink>
       </nav>
     </div>
@@ -24,7 +25,6 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
-
 .active {
   font-weight: bold;
   color: rgb(0, 68, 255);
