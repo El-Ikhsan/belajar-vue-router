@@ -1,4 +1,5 @@
 <script setup>
+import { watchEffect } from 'vue';
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -9,7 +10,7 @@ const post = ref(null)
 const error = ref(null)
 
 // watch the params of the route to fetch the data again
-watch(() => route.params.id, fetchData, { immediate: true })
+watchEffect(async () => await fetchData(route.params.id))
 
 async function fetchData(id) { // data id di teruskan dari watch ketika route.params.id ini adalah fungsi bawaan watch
   error.value = post.value = null
