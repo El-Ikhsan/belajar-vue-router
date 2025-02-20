@@ -9,6 +9,14 @@ const loading = ref(false)
 const post = ref(null)
 const error = ref(null)
 
+// onBeforeRouteLeave((to, from) => {
+//   const answer = window.confirm(
+//     'Do you really want to leave? you have unsaved changes!'
+//   )
+//   // cancel the navigation and stay on the same page
+//   if (!answer) return false
+// })
+
 // watch the params of the route to fetch the data again
 watchEffect(async () => await fetchData(route.params.id))
 
